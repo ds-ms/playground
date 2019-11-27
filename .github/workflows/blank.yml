@@ -14,4 +14,4 @@ jobs:
     - name: Run a multi-line script
       run: |
         echo Add other actions to build,
-        echo test, and deploy your project.
+        CLAIR_ADDR=localhost:6060 /home/aj/Downloads/applications/klar-2.4.0-linux-amd64 arminc/clair-db:latest
