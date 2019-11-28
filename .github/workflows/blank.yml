@@ -25,7 +25,7 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
         registry: ajacr2.azurecr.io
 
-    - name: Container scan
+    - name: Container vulnerability scan
       uses: ajinkya599/scan@master
       with:
         image-to-scan: 'ajacr2.azurecr.io/test:master'
