@@ -30,7 +30,7 @@ jobs:
         docker login ajacr2.azurecr.io --username ${{ secrets.DOCKER_USERNAME }} --password ${{ secrets.DOCKER_PASSWORD }}
         docker push ajacr2.azurecr.io/test:master
 
-    - name: Container vulnerability scan
+    - name: Container vulnerability scan 
       uses: ajinkya599/scan@master
       with:
         image-to-scan: 'ajacr2.azurecr.io/test:master'
