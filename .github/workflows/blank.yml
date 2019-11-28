@@ -34,7 +34,7 @@ jobs:
 #       with:
 #         ref: master
 
-    - name: Container vulnerability scan 
+    - name: Container  vulnerability scan 
       uses: ajinkya599/scan@master
       with:
         image-to-scan: 'ajacr2.azurecr.io/test:master'
