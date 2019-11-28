@@ -23,6 +23,7 @@ jobs:
         name: ajacr2.azurecr.io/test
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
+        registry: ajacr2.azurecr.io
 
     - name: Container scan
       uses: ajinkya599/scan@master
