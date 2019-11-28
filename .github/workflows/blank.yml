@@ -17,4 +17,4 @@ jobs:
       uses: ajinkya599/scan@master
       with:
         image-to-scan: 'arminc/clair-db:latest'
-        whitelist-file: '${{ github.workspace }}/${{ github.repository }}/cve-whitelist.yml'
+        whitelist-file: '${{ github.workspace }}/cve-whitelist.yml'
