@@ -41,6 +41,7 @@ jobs:
         whitelist-file: 'cve-whitelist.yml'
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
+        github-token: ${{ secrets.GITHUB_TOKEN }}
         whitelist-from-branch: master
       env:  
         CLAIR_OUTPUT : Low
