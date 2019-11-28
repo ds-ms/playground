@@ -17,3 +17,4 @@ jobs:
       uses: ajinkya599/scan@master
       with:
         image-to-scan: 'arminc/clair-db:latest'
+        whitelist-file: '/cve-whitelist.yml'
