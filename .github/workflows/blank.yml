@@ -7,14 +7,25 @@ jobs:
 
     runs-on: self-hosted
 
+#     steps:
+#     - uses: actions/checkout@v1
+#     - name: Testing  action
+#       uses: ajinkya599/scan@master
+#       with:
+#         image-to-scan: 'arminc/clair-db:latest'
+#         whitelist-file: '${{ github.workspace }}/cve-whitelist.yml'
+
     steps:
     - uses: actions/checkout@v1
-#     - name: Run a multi-line script
-#       run: |
-#         echo Add other actions to build,
-#         CLAIR_ADDR=localhost:6060 /home/aj/Downloads/applications/klar-2.4.0-linux-amd64 arminc/clair-db:latest
-    - name: Testing  action
+    - name: Publish to Registry
+      uses: HurricanKai/Publish-Docker-Github-Action@master
+      with:
+        name: ajacr2.azurecr.io/test
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+
+    - name: Container scan
       uses: ajinkya599/scan@master
       with:
-        image-to-scan: 'arminc/clair-db:latest'
+        image-to-scan: 'ajacr2.azurecr.io/test:master'
         whitelist-file: '${{ github.workspace }}/cve-whitelist.yml'
