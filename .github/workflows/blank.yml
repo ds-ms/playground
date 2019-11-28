@@ -29,6 +29,10 @@ jobs:
         docker build -f ${{ github.workspace }}/Dockerfile -t ajacr2.azurecr.io/test:master .
         docker login ajacr2.azurecr.io --username ${{ secrets.DOCKER_USERNAME }} --password ${{ secrets.DOCKER_PASSWORD }}
         docker push ajacr2.azurecr.io/test:master
+    
+    - uses: actions/checkout@v1
+      with:
+        ref: master
 
     - name: Container vulnerability scan 
       uses: ajinkya599/scan@master
