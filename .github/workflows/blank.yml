@@ -16,4 +16,4 @@ jobs:
     - name: Testing action
       uses: ajinkya599/scan@master
       with:
-        image-to-scan: 'ajacr1.azurecr.io/test:tag1'
+        image-to-scan: 'ajacr1.azurecr.io/test:tag11'
