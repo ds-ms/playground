@@ -17,10 +17,6 @@ jobs:
         docker login --username ${{ secrets.DOCKERHUB_USERNAME }} --password ${{ secrets.DOCKERHUB_PASSWORD }}
         docker push ajinkya599/scanrepo:quarantine
 
-    - uses: actions/checkout@v1
-      with:
-        ref: master
-
     - name: Container vulnerability scan 
       uses: ajinkya599/scan@master
       with:
@@ -29,6 +25,6 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_PASSWORD }}
         github-token: ${{ secrets.GITHUB_TOKEN }}
-        whitelist-from-branch: master
+        whitelist-from-branch: ${{ github.base_ref }}
       env:  
         CLAIR_OUTPUT : Low

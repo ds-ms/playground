@@ -1,2 +1,2 @@
-FROM bitnami/redis:5.0.5-r175
+FROM redis:5.0.1
 COPY . .
