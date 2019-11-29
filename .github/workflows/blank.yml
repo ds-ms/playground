@@ -13,14 +13,14 @@ jobs:
         
     - name: Docker build and push
       run: |
-        docker build -f ${{ github.workspace }}/Dockerfile -t ajinkya599/scanrepo:quarantine .
+        docker build -f ${{ github.workspace }}/Dockerfile -t ajinkya599/scanrepo:test .
         docker login --username ${{ secrets.DOCKERHUB_USERNAME }} --password ${{ secrets.DOCKERHUB_PASSWORD }}
-        docker push ajinkya599/scanrepo:quarantine
+        docker push ajinkya599/scanrepo:test
 
     - name: Container vulnerability scan 
-      uses: ajinkya599/scan@master
+      uses: ajinkya599/scan@v0
       with:
-        image-to-scan: ajinkya599/scanrepo:quarantine
+        image-to-scan: ajinkya599/scanrepo:test
         whitelist-file: cve-whitelist.yml
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_PASSWORD }}
