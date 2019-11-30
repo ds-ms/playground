@@ -18,7 +18,7 @@ jobs:
         docker push ajinkya599/scanrepo:test
 
     - name: Container vulnerability scan 
-      uses: ajinkya599/scan@v0
+      uses: ajinkya599/scan@feature
       with:
         image-to-scan: ajinkya599/scanrepo:test
         whitelist-file: cve-whitelist.yml
