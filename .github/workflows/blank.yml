@@ -25,5 +25,4 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_PASSWORD }}
         github-token: ${{ secrets.GITHUB_TOKEN }}
-      env:  
-        CLAIR_OUTPUT : Low
+        severity-threshold: Low 
