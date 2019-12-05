@@ -16,6 +16,7 @@ jobs:
         docker build -f ${{ github.workspace }}/Dockerfile -t ajinkya599/scanrepo:test .
         docker login --username ${{ secrets.DOCKERHUB_USERNAME }} --password ${{ secrets.DOCKERHUB_PASSWORD }}
         docker push ajinkya599/scanrepo:test
+        docker network create clairnetwork --subnet=172.28.0.0/16 --ip-range=172.28.5.0/24
 
     - name: Container vulnerability scan 
       uses: ajinkya599/scan@feature
