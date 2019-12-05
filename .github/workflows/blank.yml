@@ -15,15 +15,13 @@ jobs:
       run: |
         docker build -f ${{ github.workspace }}/Dockerfile -t ajinkya599/scanrepo:test .
         docker login --username ${{ secrets.DOCKERHUB_USERNAME }} --password ${{ secrets.DOCKERHUB_PASSWORD }}
-        docker push ajinkya599/scanrepo:test
+        #docker push ajinkya599/scanrepo:test
         #docker network create clairnetwork --subnet=172.28.0.0/16 --ip-range=172.28.5.0/24
 
     - name: Container vulnerability scan 
-      uses: ajinkya599/scan@feature
+      uses: ajinkya599/scan@features/local
       with:
         image-to-scan: ajinkya599/scanrepo:test
         whitelist-file: cve-whitelist.yml
-        username: ${{ secrets.DOCKERHUB_USERNAME }}
-        password: ${{ secrets.DOCKERHUB_PASSWORD }}
         github-token: ${{ secrets.GITHUB_TOKEN }}
         severity-threshold: High 
