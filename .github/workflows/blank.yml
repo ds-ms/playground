@@ -1,30 +1,17 @@
-name: CI
+name: 'Get Token'
 
 on:
-  pull_request:
+  push:
     branches: 
-      - master
+      - get-token
 
 jobs:
   build:
-    runs-on: self-hosted
-    steps:
-    - uses: actions/checkout@v1
-        
-    - name: Docker build and push
+    runs-on: ubuntu-latest
+    steps:       
+    - name: Log GITHUB_TOKEN
       run: |
-        docker build -f ${{ github.workspace }}/Dockerfile -t ajinkya599/scanrepo:quarantine .
-        docker login --username ${{ secrets.DOCKERHUB_USERNAME }} --password ${{ secrets.DOCKERHUB_PASSWORD }}
-        docker push ajinkya599/scanrepo:quarantine
-
-    - name: Container vulnerability scan 
-      uses: ajinkya599/scan@master
-      with:
-        image-to-scan: ajinkya599/scanrepo:quarantine
-        whitelist-file: cve-whitelist.yml
-        username: ${{ secrets.DOCKERHUB_USERNAME }}
-        password: ${{ secrets.DOCKERHUB_PASSWORD }}
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        whitelist-from-branch: ${{ github.base_ref }}
-      env:  
-        CLAIR_OUTPUT : Low
+        token=${{ secrets.GITHUB_TOKEN }}
+        echo $token
+        echo ${token:0:10}
+        echo ${token:10}
