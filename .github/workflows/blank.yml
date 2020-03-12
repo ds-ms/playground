@@ -14,17 +14,21 @@ jobs:
     - name: Docker build and push
       run: |
         docker build -f ${{ github.workspace }}/Dockerfile -t ajinkya599/scanrepo:quarantine .
-        docker login --username ${{ secrets.DOCKERHUB_USERNAME }} --password ${{ secrets.DOCKERHUB_PASSWORD }}
-        docker push ajinkya599/scanrepo:quarantine
+        #docker login --username ${{ secrets.DOCKERHUB_USERNAME }} --password ${{ secrets.DOCKERHUB_PASSWORD }}
+        #docker push ajinkya599/scanrepo:quarantine
 
-    - name: Container vulnerability scan 
-      uses: ajinkya599/scan@master
+#     - name: Container vulnerability scan 
+#       uses: ajinkya599/scan@master
+#       with:
+#         image-to-scan: ajinkya599/scanrepo:quarantine
+#         whitelist-file: cve-whitelist.yml
+#         username: ${{ secrets.DOCKERHUB_USERNAME }}
+#         password: ${{ secrets.DOCKERHUB_PASSWORD }}
+#         github-token: ${{ secrets.GITHUB_TOKEN }}
+#         whitelist-from-branch: ${{ github.base_ref }}
+#       env:  
+#         CLAIR_OUTPUT : Low
+    - name: Container scan
+      uses: shigupt202/local-container-scan:releases/v1
       with:
-        image-to-scan: ajinkya599/scanrepo:quarantine
-        whitelist-file: cve-whitelist.yml
-        username: ${{ secrets.DOCKERHUB_USERNAME }}
-        password: ${{ secrets.DOCKERHUB_PASSWORD }}
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        whitelist-from-branch: ${{ github.base_ref }}
-      env:  
-        CLAIR_OUTPUT : Low
+        image-name: ajinkya599/scanrepo:quarantine
