@@ -32,3 +32,4 @@ jobs:
       uses: shigupt202/local-container-scan@users/aj/post-check-run
       with:
         image-name: ajinkya599/scanrepo:quarantine
+        whitelist-file: .github/containerscan/whitelist.txt
