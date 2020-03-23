@@ -29,7 +29,7 @@ jobs:
 #       env:  
 #         CLAIR_OUTPUT : Low
     - name: Container scan
-      uses: shigupt202/local-container-scan@users/aj/add-check-run-dev-3
+      uses: shigupt202/local-container-scan@users/aj/add-check-run
       with:
         image-name: ajinkya599/scanrepo:quarantine
 
