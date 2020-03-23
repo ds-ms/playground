@@ -32,3 +32,4 @@ jobs:
       uses: shigupt202/local-container-scan@users/aj/add-check-run-dev-3
       with:
         image-name: ajinkya599/scanrepo:quarantine
+
