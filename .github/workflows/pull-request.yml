@@ -11,7 +11,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
         
-    - name: Docker build and push
+    - name: Docker build
       run: |
         docker build -f ${{ github.workspace }}/Dockerfile -t ajinkya599/scanrepo:quarantine .
         #docker login --username ${{ secrets.DOCKERHUB_USERNAME }} --password ${{ secrets.DOCKERHUB_PASSWORD }}
