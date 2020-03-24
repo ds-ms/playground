@@ -11,11 +11,12 @@ jobs:
     steps:
     - uses: actions/checkout@v1
         
-    - name: Docker build
-      run: |
-        docker build -f ${{ github.workspace }}/Dockerfile -t ajinkya599/scanrepo:alpha.1.0 .
+#     - name: Docker build
+#       run: |
+#         docker build -f ${{ github.workspace }}/Dockerfile -t ajinkya599/scanrepo:alpha.1.0 .
         
     - name: Container scan
       uses: shigupt202/local-container-scan@releases/v1
       with:
         image-name: ajinkya599/scanrepo:alpha.1.0
+        severity-threshold: CRitiCAL
