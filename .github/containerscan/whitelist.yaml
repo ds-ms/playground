@@ -1,5 +1,6 @@
 general:
   commonVulnerabilities:
     - CVE-1234-5678
+    - CVE-2019-3462
   bestPracticesVulnerabilities:
     - CIS-DI-0001
