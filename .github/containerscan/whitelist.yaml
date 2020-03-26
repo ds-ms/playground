@@ -4,4 +4,4 @@ general:
     - CVE-2019-3462
     - CVE-2017-16997
   bestPracticeVulnerabilities:
-    - CIS-DI-0001
+    - CIS-DI-0005
