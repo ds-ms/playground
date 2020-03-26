@@ -3,5 +3,5 @@ general:
     - CVE-1234-5678
     - CVE-2019-3462
     - CVE-2017-16997
-  bestPracticesVulnerabilities:
+  bestPracticeVulnerabilities:
     - CIS-DI-0001
