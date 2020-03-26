@@ -16,7 +16,7 @@ jobs:
         docker build -f ${{ github.workspace }}/Dockerfile -t ajinkya599/scanrepo:alpha.1.0 .
         
     - name: Container scan
-      uses: shigupt202/local-container-scan@users/aj/fixCheckRunIssues
+      uses: shigupt202/local-container-scan@users/aj/fixCheckRunIssues-dev
       with:
         image-name: ajinkya599/scanrepo:alpha.1.0
         severity-threshold: CRitiCAL
