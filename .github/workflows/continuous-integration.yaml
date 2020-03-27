@@ -21,3 +21,4 @@ jobs:
         image-name: ajinkya599/scanrepo:alpha.1.0
         severity-threshold: hiGh
 
+
