@@ -21,3 +21,4 @@ jobs:
       uses: shigupt202/local-container-scan@users/aj/proxyCheckRunCreation
       with:
         image-name: ajinkya599/scanrepo:quarantine
+
