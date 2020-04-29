@@ -38,3 +38,9 @@ general:
   - DKL-LI-0003
   - CIS-123-21
   - CIS-456-54
+  vulnerabilities:
+  - CVE-1234-321
+  - CVE-5678-876
+  bestPracticeViolations:
+  - CIS-123-21
+  - CIS-456-54
