@@ -33,5 +33,9 @@ general:
   - CIS-DI-0006
   - CIS-DI-0008
   - DKL-LI-0003
-  vulnerabilities: 
-  bestPracticeViolations: 
+  vulnerabilities:
+  - CVE-1234-321
+  - CVE-5678-876
+  bestPracticeViolations:
+  - CIS-123-21
+  - CIS-456-54
