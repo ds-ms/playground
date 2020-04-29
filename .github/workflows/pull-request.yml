@@ -18,6 +18,6 @@ jobs:
         #docker push ajinkya599/scanrepo:quarantine
 
     - name: Container scan
-      uses: shigupt202/local-container-scan@releases/v1
+      uses: Azure/container-scan@users/aj/check-run-through-app-dev
       with:
         image-name: ajinkya599/scanrepo:quarantine
