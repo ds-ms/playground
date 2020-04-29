@@ -36,6 +36,10 @@ general:
   vulnerabilities:
   - CVE-1234-321
   - CVE-5678-876
+  - CVE-9999-321
+  - CVE-9999-876
   bestPracticeViolations:
   - CIS-123-21
   - CIS-456-54
+  - CIS-999-21
+  - CIS-999-54
