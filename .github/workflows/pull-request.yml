@@ -13,11 +13,9 @@ jobs:
         
     - name: Docker build
       run: |
-        docker build -f ${{ github.workspace }}/Dockerfile -t ajinkya599/scanrepo:quarantine .
-        #docker login --username ${{ secrets.DOCKERHUB_USERNAME }} --password ${{ secrets.DOCKERHUB_PASSWORD }}
-        #docker push ajinkya599/scanrepo:quarantine
+        docker build -f ${{ github.workspace }}/Dockerfile -t ajinkya599/scanrepo:beta-0.0 .
 
     - name: Container scan
       uses: Azure/container-scan@users/aj/check-run-through-app-dev
       with:
-        image-name: ajinkya599/scanrepo:quarantine
+        image-name: ajinkya599/scanrepo:beta-0.0
