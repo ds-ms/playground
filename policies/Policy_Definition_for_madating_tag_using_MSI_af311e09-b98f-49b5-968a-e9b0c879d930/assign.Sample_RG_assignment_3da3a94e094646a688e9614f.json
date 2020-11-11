@@ -1,0 +1,48 @@
+{
+ "sku": {
+  "name": "A0",
+  "tier": "Free"
+ },
+ "properties": {
+  "displayName": "Sample RG assignment",
+  "policyDefinitionId": "/subscriptions/c00d16c7-6c1f-4c03-9be1-6934a4c49682/providers/Microsoft.Authorization/policyDefinitions/af311e09-b98f-49b5-968a-e9b0c879d930",
+  "scope": "/subscriptions/c00d16c7-6c1f-4c03-9be1-6934a4c49682",
+  "notScopes": [
+   "/subscriptions/c00d16c7-6c1f-4c03-9be1-6934a4c49682/resourceGroups/az-pac-dev"
+  ],
+  "parameters": {
+   "tagName": {
+    "value": "Sample"
+   },
+   "tagValue": {
+    "value": "test"
+   }
+  },
+  "description": "",
+  "metadata": {
+   "assignedBy": "GANESH S",
+   "parameterScopes": {},
+   "createdBy": "dd0e1b8b-3224-4eb9-a44a-94b111cd91d4",
+   "createdOn": "2020-08-26T11:14:37.2253413Z",
+   "updatedBy": "a5372573-2d9d-4e35-9d83-9ac5ef462500",
+   "updatedOn": "2020-11-04T14:38:52.0251874Z",
+   "gitHubPolicy": {
+    "digest": "a0e8510acbb3c62e553dcc8e7c6daae80fe4085d",
+    "repoName": "Ganeshrockz/AnotherTest",
+    "commitSha": "570ad0042b03b5e5ecc29e011af8e06b5f0c5e27",
+    "runUrl": "https://github.com/Ganeshrockz/AnotherTest/actions/runs/345710538",
+    "filepath": "Sample/policies/Policy_Definition_for_madating_tag_using_MSI_af311e09-b98f-49b5-968a-e9b0c879d930/assign.Sample_RG_assignment_3da3a94e094646a688e9614f.json"
+   }
+  },
+  "enforcementMode": "Default"
+ },
+ "identity": {
+  "principalId": "04ebf765-22a7-42f0-a609-45d8459a35ae",
+  "tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+  "type": "SystemAssigned"
+ },
+ "id": "/subscriptions/c00d16c7-6c1f-4c03-9be1-6934a4c49682/providers/Microsoft.Authorization/policyAssignments/3da3a94e094646a688e9614f",
+ "type": "Microsoft.Authorization/policyAssignments",
+ "name": "3da3a94e094646a688e9614f",
+ "location": "eastus"
+}

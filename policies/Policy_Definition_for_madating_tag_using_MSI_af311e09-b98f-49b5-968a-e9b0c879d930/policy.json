@@ -1,0 +1,60 @@
+{
+ "properties": {
+  "displayName": "Policy Definition for madating tag using MSI",
+  "policyType": "Custom",
+  "mode": "All",
+  "metadata": {
+   "createdBy": "dd0e1b8b-3224-4eb9-a44a-94b111cd91d4",
+   "createdOn": "2020-08-26T11:14:34.547481Z",
+   "updatedBy": "a892e7d3-4420-429c-bd01-8b3e5a61d32e",
+   "updatedOn": "2020-11-04T15:55:07.9021151Z",
+   "gitHubPolicy": {
+    "digest": "a907cbe604a77103a31981a1f8c88b880b783fff",
+    "repoName": "Ganeshrockz/AnotherTest",
+    "commitSha": "12c51e6d128055b24eb9ff307b22bd233cd0d3ea",
+    "runUrl": "https://github.com/Ganeshrockz/AnotherTest/actions/runs/345838655",
+    "filepath": "SAMPLE/ganes/policies/Policy_Definition_for_madating_tag_using_MSI_af311e09-b98f-49b5-968a-e9b0c879d930"
+   }
+  },
+  "parameters": {
+   "tagName": {
+    "type": "String",
+    "metadata": {
+     "displayName": "Tag Name",
+     "description": "Name of the tag, such as 'environment'"
+    }
+   },
+   "tagValue": {
+    "type": "String",
+    "metadata": {
+     "displayName": "Tag Value",
+     "description": "Value of the tag, such as 'production'"
+    }
+   }
+  },
+  "policyRule": {
+   "if": {
+    "field": "[concat('tags[', parameters('tagName'), ']')]",
+    "exists": "false"
+   },
+   "then": {
+    "effect": "modify",
+    "details": {
+     "roleDefinitionIds": [
+      "/providers/microsoft.authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"
+     ],
+     "operations": [
+      {
+       "operation": "add",
+       "field": "[concat('tags[', parameters('tagName'), ']')]",
+       "value": "[parameters('tagValue')]"
+      }
+     ]
+    }
+   }
+  }
+ },
+ "id": "/subscriptions/c00d16c7-6c1f-4c03-9be1-6934a4c49682/providers/Microsoft.Authorization/policyDefinitions/af311e09-b98f-49b5-968a-e9b0c879d930",
+ "type": "Microsoft.Authorization/policyDefinitions",
+ "name": "af311e09-b98f-49b5-968a-e9b0c879d930"
+}
